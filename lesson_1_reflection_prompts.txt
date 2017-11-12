@@ -1,0 +1,47 @@
+How did viewing a diff between two versions of a file help you see the bug that
+was introduced?
+
+    Diff helped identify the exact lines where changes occurred. Rather than 
+    searching every line for the bug, I only had to look through that small 
+    subset. 
+
+
+How could having easy access to the entire history of a file make you a more
+efficient programmer in the long term?
+
+    I wouldn't have to save multiple versions of a file. Over time, I tend to 
+    forget the significance of the various versions. 
+
+What do you think are the pros and cons of manually choosing when to create a
+commit, like you do in Git, vs having versions automatically saved, like Google
+docs does?
+
+    Pros: Less previous versions to search through to find a past version.
+    Cons: You have to remember to save periodically. User becomes responsible, 
+    for better or worse.
+
+Why do you think some version control systems, like Git, allow saving multiple
+files in one commit, while others, like Google Docs, treat each file separately?
+
+    Files in Google Docs are typically single files, whereas files used with 
+    Git are typically programs and projects spanning multiple files.
+
+How can you use the commands git log and git diff to view the history of files?
+
+    "git log" shows a record of all commits, including a unique commmit ID, 
+    author, date/time, and comment. Adding "--stat" shows additional 
+    information, including what files were changed and the number of 
+    insertions and deletions in each file.
+
+    "git diff" shows the actual content in a file, highlghting the insertions 
+    and deletions that comprise the difference between two versions.
+
+How might using version control make you more confident to make changes that
+could break something?
+
+    The cost of a mistake is practically non-existant since you can always go 
+    back in time.
+
+Now that you have your workspace set up, what do you want to try using Git for?
+
+    All my data science and machine learning projects.
