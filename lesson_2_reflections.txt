@@ -13,15 +13,53 @@ What value do you think it offers?
 How can you use the staging area to make sure you have one commit per logical
 change?
 
-	
+	Every file added to the staging area should represent one logical change. 
+	Right before adding files to the staging area, use "git diff" to see the 
+	changes from the staging area (initally, the most recent commit) and 
+	the working directory. Once files are added to the staging area and right 
+	before committing, use "git diff --staged" to look at changes in the 
+	staged files relative to the most recent commmit in the repo. Ensure these 
+	represent one logical change before committing.
 
 What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
 
+	Branches are helpful if I want to make alternate versions of my project. 
+	I can be free to experiment while still having the master branch 
+	unchanged. Furthermore, I can continue developing on the master branch and 
+	the alternate branch independently. 
+
 How do the diagrams help you visualize the branch structure?
+
+	Diagrams help me quickly hop between commits between across a single 
+	branch or between branches. Doing it in my head takes longer, and I can 
+	only progress sequentially across commits.
 
 What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
 
+	On a merge, changes in each branch are compared with the last common 
+	commit. The additions in each branch are retained and the deletions are 
+	removed. Commit histories in each branch are saved and sorted by time 
+	stamp. Visually in the diagram, two branches merge to one coommit. That 
+	commit has arrows point back into each previous commit because it comtains 
+	both in the merged logs.
+
 What are the pros and cons of Git's automatic merging vs. always doing merges
 manually?
+	
+	Pros:
+	Git's automatic merging spares you from the tedious and obvious work 
+	while flagging anything remotely ambiguous as a conflict for you to handle 
+	manually.
+	Cons:
+	I can think a scenario where you delete a line of code in your branch that 
+	someone else requires in their branch. Perhaps they add lines dependent on 
+	the	code in the line you deleted. When the automatic merging occurs, the 
+	line you deleted is gone, breaking the code in the lines added by the 
+	other person. Perhaps my understanding is missing something, but this 
+	currently seems like a way the merged commit would be broken and require a 
+	subsequent commit to make functional. Perhaps some procedural testing of 
+	the merged commit would be sensible to catch this scenario and prompt 
+	a fix.
+
